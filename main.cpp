@@ -1,34 +1,35 @@
 #include <iostream>
-using namespace std;
 
 int main() {
     int K;
-    cout << "Введіть оцінку (1–5): ";
-    cin >> K;
+    std::cout << "Введіть оцінку (1-5): ";
+    if (!(std::cin >> K)) {
+        std::cerr << "Помилка вводу\n";
+        return 1;
+    }
 
-    cout << "--------------------------\n";
+    std::cout << "--------------------------\n";
 
     switch (K) {
         case 1:
-            cout << "погано";
+            std::cout << "Погано\n";
             break;
         case 2:
-            cout << "незадовільно";
+            std::cout << "Незадовільно\n";
             break;
         case 3:
-            cout << "задовільно";
+            std::cout << "Задовільно\n";
             break;
         case 4:
-            cout << "добре";
+            std::cout << "Добре\n";
             break;
         case 5:
-            cout << "відмінно";
+            std::cout << "Відмінно\n";
             break;
         default:
-            cout << "помилка";
+            std::cout << "Невірне значення (має бути 1-5)\n";
             break;
     }
 
-    cout << endl;
     return 0;
 }
